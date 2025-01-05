@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Page</title>
+    <style>
+        body {
+            background-image: url("{% static '/DiabetesPrediction/images/plus.jpg' %}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #000; /* Set text color to black */
+        }
+
+        .main {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 5%;
+            width: 550px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #0086b3;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        input[type=submit] {
+            background-color: #4dc3ff;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        table {
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        table tr {
+            margin-bottom: 15px;
+        }
+
+        table td {
+            text-align: right;
+            padding: 8px;
+            font-weight: bold;
+            color: #000; /* Set text color to black */
+        }
+
+        table input[type=text] {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        p {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            color: #000; /* Set text color to black */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main">
+            <p>Welcome to the Prediction Page</p>
+            <h2>Please enter the following information:</h2>
+            <form action="result">
+                <table>
+                    <tr>
+                        <td>Pregnancies:</td>
+                        <td><input type="text" name="n1"></td>
+                    </tr>
+                    <tr>
+                        <td>Glucose:</td>
+                        <td><input type="text" name="n2"></td>
+                    </tr>
+                    <tr>
+                        <td>Blood Pressure:</td>
+                        <td><input type="text" name="n3"></td>
+                    </tr>
+                    <tr>
+                        <td>Skin Thickness:</td>
+                        <td><input type="text" name="n4"></td>
+                    </tr>
+                    <tr>
+                        <td>Insulin:</td>
+                        <td><input type="text" name="n5"></td>
+                    </tr>
+                    <tr>
+                        <td>BMI:</td>
+                        <td><input type="text" name="n6"></td>
+                    </tr>
+                    <tr>
+                        <td>Diabetes Pedigree Function:</td>
+                        <td><input type="text" name="n7"></td>
+                    </tr>
+                    <tr>
+                        <td>Age:</td>
+                        <td><input type="text" name="n8"></td>
+                    </tr>
+                </table>
+                <input type="submit" value="Predict">
+            </form>
+            <p>Results: {{ result2 }}</p>
+        </div>
+    </div>
+</body>
+</html>
